@@ -36,7 +36,8 @@
   var ch = $('.sl-float__btn--chat');
   if (ch) ch.addEventListener('click', function () {
     var T = window.Tawk_API;
-    if (T && T.maximize) { try { T.showWidget(); T.maximize(); } catch (e) {} }
+    if (T && T.maximize && T.isChatHidden) { try { T.showWidget(); T.maximize(); } catch (e) {} }
+    else if (window.slTawkLoad) { window.slTawkOpen = 1; window.slTawkLoad(); }
     else { var z = $('.sl-float__btn--zalo'); if (z) window.open(z.href, '_blank', 'noopener'); }
   });
 
