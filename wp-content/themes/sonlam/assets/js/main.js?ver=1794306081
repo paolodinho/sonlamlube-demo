@@ -19,7 +19,6 @@
     if (tg) tg.setAttribute('aria-expanded', open ? 'true' : 'false');
     document.body.style.overflow = open ? 'hidden' : '';
     document.body.classList.toggle('sl-nav-open', open);
-    if (window.Tawk_API && Tawk_API.hideWidget) { try { open ? Tawk_API.hideWidget() : Tawk_API.showWidget(); } catch (e) {} }
   }
   if (tg) tg.addEventListener('click', function () { setNav(true); });
   if (ov) ov.addEventListener('click', function () { setNav(false); });
@@ -31,6 +30,14 @@
       var li = a.parentElement;
       if (!li.classList.contains('is-open')) { e.preventDefault(); li.classList.add('is-open'); }
     });
+  });
+
+  // Nút Chat: mở khung Tawk (launcher mặc định của Tawk đã ẩn)
+  var ch = $('.sl-float__btn--chat');
+  if (ch) ch.addEventListener('click', function () {
+    var T = window.Tawk_API;
+    if (T && T.maximize) { try { T.showWidget(); T.maximize(); } catch (e) {} }
+    else { var z = $('.sl-float__btn--zalo'); if (z) window.open(z.href, '_blank', 'noopener'); }
   });
 
   // Ô tìm kiếm

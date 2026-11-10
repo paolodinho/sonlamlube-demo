@@ -239,7 +239,7 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 .sl-footer__bot{border-top:1px solid rgba(255,255,255,.1);padding:16px 0;font-size:13.5px;color:#93A0BD;text-align:center}
 
 /* ===== Nút nổi ===== */
-.sl-float{position:fixed;right:18px;bottom:96px;z-index:70;display:flex;flex-direction:column;gap:12px}
+.sl-float{position:fixed;right:18px;bottom:24px;z-index:70;display:flex;flex-direction:column;gap:12px}
 .sl-float__btn{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:var(--sh-2);transition:transform var(--t) var(--ease)}
 .sl-float__btn:hover{transform:scale(1.08);color:#fff}
 .sl-float__btn svg{width:26px;height:26px}
@@ -455,3 +455,9 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 }
 .sl-pagehead__t{text-transform:uppercase;color:var(--c-navy)}
 .sl-news{overflow:hidden}
+.sl-float__btn--chat{background:#1E7B3C;border:0;cursor:pointer;padding:0}
+@media (max-width:480px){
+  .sl-float__btn{flex-direction:column;gap:3px;height:56px;font-size:12px}
+  .sl-float__btn--zalo span{font-size:15px;line-height:22px}
+  body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
+}
