@@ -469,3 +469,39 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
   .sl-float__btn--zalo span{font-size:15px;line-height:22px}
   body{padding-bottom:calc(56px + env(safe-area-inset-bottom))}
 }
+
+/* 12/11 - Bảng nội dung: khung cuộn riêng, cột luôn thẳng hàng */
+.sl-tbl{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.2em 0;max-width:100%}
+.sl-tbl>table,.sl-content .sl-tbl>table,.woocommerce-Tabs-panel .sl-tbl>table{display:table!important;width:100%;margin:0;overflow:visible}
+.sl-tbl>table>thead{display:table-header-group!important;width:auto}
+.sl-tbl>table>tbody{display:table-row-group!important;width:auto}
+.sl-tbl th:first-child,.sl-tbl td:first-child{width:52%}
+@media (max-width:480px){.sl-tbl th,.sl-tbl td{padding:8px 10px!important;overflow-wrap:normal!important;word-break:normal}}
+
+/* 12/11 - Icon liên hệ nhanh: Zalo vẽ lại, nút tròn trên máy tính */
+.sl-zalo{width:34px;height:34px}
+.sl-zalo__b{fill:currentColor}
+.sl-zalo__t{font:700 12.5px/1 Arial,sans-serif;letter-spacing:-.2px;fill:#0068FF}
+.sl-float__btn--zalo{color:#fff}
+.sl-float__btn--chat{position:relative}
+.sl-float__btn--chat.has-msg::after{content:"";position:absolute;top:8px;right:calc(50% - 18px);width:10px;height:10px;border-radius:50%;background:#E02424;box-shadow:0 0 0 2px #fff}
+
+/* 12/11 - Thanh liên hệ dưới đáy (điện thoại, máy tính bảng): nền trắng, icon màu thương hiệu, nút Gọi nổi bật */
+@media (max-width:1023px){
+  .sl-float{background:#fff;border-top:1px solid #E6E9F0;box-shadow:0 -4px 16px rgba(21,38,77,.08)}
+  .sl-float__btn{background:#fff!important;color:var(--c-navy)!important;flex-direction:column;gap:4px;height:58px;font:600 12px/1.1 var(--f-body);letter-spacing:.01em;position:relative}
+  .sl-float__btn+.sl-float__btn::before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:1px;background:#E6E9F0}
+  .sl-float__btn svg{width:25px;height:25px;flex:none}
+  .sl-float__btn .sl-zalo{width:25px;height:25px;transform:scale(1.12)}
+  .sl-float__btn--zalo .sl-zalo__b{fill:#0068FF}
+  .sl-float__btn--zalo .sl-zalo__t{fill:#fff}
+  .sl-float__btn--mes svg{color:#0866FF}
+  .sl-float__btn--chat svg{color:#1E9E4F}
+  .sl-float__btn--call{background:var(--c-yellow)!important;color:var(--c-navy)!important;font-weight:700}
+  .sl-float__btn--call::before{display:none}
+  .sl-float__btn--call svg{fill:none;stroke:currentColor;stroke-width:2;color:var(--c-navy)}
+  .sl-float__btn--zalo span{display:none}
+  .sl-float__btn em{white-space:nowrap}
+  body{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
+  #tawkchat-container iframe[title*="chat widget"]:not([style*="height: 100%"]){bottom:70px!important}
+}
