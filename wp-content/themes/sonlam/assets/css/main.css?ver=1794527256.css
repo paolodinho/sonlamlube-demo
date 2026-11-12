@@ -425,7 +425,7 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
   .sl-feat__card p{font-size:14.5px}
   ul.products,.sl-layout__main ul.products,.sl-layout--left ul.products,.single-product .sl-layout__main ul.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
   .sl-card__name{font-size:14px;min-height:58px;padding:10px}
-  .sl-footer__grid{grid-template-columns:1fr;gap:28px}
+  .sl-footer__grid{grid-template-columns:1fr 1fr;gap:28px 20px}
   .sl-postgrid{grid-template-columns:1fr}
   .sl-cta__act{flex-wrap:wrap}
   .sl-float{right:12px;bottom:92px}
@@ -503,5 +503,24 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
   .sl-float__btn--zalo span{display:none}
   .sl-float__btn em{white-space:nowrap}
   body{padding-bottom:calc(58px + env(safe-area-inset-bottom))}
-  #tawkchat-container iframe[title*="chat widget"]:not([style*="height: 100%"]){bottom:70px!important}
+}
+
+/* Tawk: an han nut tron va o xem truoc tin cua Tawk (tranh chop nhay khi tai); khach mo chat bang nut Chat cua web */
+#min-widget,#message-preview{display:none!important}
+
+/* Danh mục sản phẩm: nút tiêu đề (PC chỉ là chữ) */
+.sl-cat-tg{all:unset;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;cursor:default}
+.sl-cat-tg svg{display:none;width:16px;height:16px;transition:transform .2s}
+/* Điện thoại, máy tính bảng: cột phụ chỉ giữ Danh mục (gập, đặt trên danh sách); bỏ Hỗ trợ + Tin tức (đã có ở chân trang, thanh liên hệ) */
+@media (max-width:1080px){
+  .sl-layout--left .sl-layout__side{order:0}
+  .sl-layout__side>.sl-box:not(.sl-box--cat){display:none}
+  .single-product .sl-layout__side{display:none}
+  .sl-box--cat .sl-cat-tg{cursor:pointer;justify-content:space-between}
+  .sl-box--cat .sl-cat-tg svg{display:block}
+  .sl-box--cat.is-open .sl-cat-tg svg{transform:rotate(180deg)}
+  .sl-box--cat .sl-tree{display:none}
+  .sl-box--cat.is-open .sl-tree{display:block}
+  .sl-box--cat .sl-box__title{text-align:left}
+  .sl-layout{gap:18px}
 }

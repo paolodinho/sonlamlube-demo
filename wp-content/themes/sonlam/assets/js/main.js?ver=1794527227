@@ -41,6 +41,14 @@
     else { var z = $('.sl-float__btn--zalo'); if (z) window.open(z.href, '_blank', 'noopener'); }
   });
 
+  // Danh mục sản phẩm: trên điện thoại gập lại, bấm tiêu đề để mở
+  document.querySelectorAll('.sl-cat-tg').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var box = b.closest('.sl-box--cat'); var on = box.classList.toggle('is-open');
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+    });
+  });
+
   // Ô tìm kiếm
   var st = $('.sl-search-tg'), sb = $('#sl-search');
   if (st && sb) st.addEventListener('click', function () {
