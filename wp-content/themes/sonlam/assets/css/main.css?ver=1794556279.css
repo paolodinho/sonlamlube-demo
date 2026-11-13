@@ -566,3 +566,10 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 .sl-pvoil__imgs img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block}
 @media(max-width:800px){.sl-pvoil{padding:36px 0}.sl-pvoil__grid{grid-template-columns:1fr;gap:20px}.sl-pvoil__imgs{grid-template-columns:1fr 1fr}}
 .sl-pvoil__logo{display:block;width:min(320px,80%);height:auto;margin:0 0 18px}
+/* Bam vao anh san pham de xem anh lon (photoswipe): lop zoom khong chan click */
+.woocommerce-product-gallery__image img.zoomImg{pointer-events:none}
+.woocommerce-product-gallery__image a{cursor:zoom-in;display:block}
+.woocommerce-product-gallery__trigger{position:absolute;top:10px;right:10px;z-index:9;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 1px 6px rgba(0,0,0,.25);font-size:0;text-indent:-9999px;overflow:hidden}
+.woocommerce-product-gallery__trigger:before{content:"";position:absolute;left:11px;top:10px;width:11px;height:11px;border:2px solid #15264D;border-radius:50%}
+.woocommerce-product-gallery__trigger:after{content:"";position:absolute;left:24px;top:24px;width:2px;height:8px;background:#15264D;transform:rotate(-45deg);transform-origin:top}
+.woocommerce-product-gallery{position:relative}
