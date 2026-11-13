@@ -557,7 +557,7 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 /* 13/11 khối sản phẩm gọn ngay dưới banner */
 .sl-hot--brands{padding:56px 0 64px}
 
-/* Nhà phân phối chiến lược PV OIL LUBE */
+/* Nhà phân phối chiến lược PVOIL LUBE */
 .sl-pvoil{padding:56px 0;background:var(--c-soft)}
 .sl-pvoil__grid{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center}
 .sl-pvoil__txt h2{font-family:var(--f-head);margin:0 0 14px;font-size:clamp(22px,2.4vw,32px);color:var(--c-blue);text-wrap:balance}
