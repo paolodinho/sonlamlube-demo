@@ -544,12 +544,15 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 /* Hàng sản phẩm theo hãng */
 .sl-brow+.sl-brow{margin-top:44px}
 .sl-brow .sl-sec-head{margin-bottom:22px}
-.sl-hot--brands ul.sl-brow__list{grid-template-columns:repeat(5,minmax(0,1fr))}
+.sl-hot--brands ul.sl-brow__list{grid-template-columns:repeat(4,minmax(0,1fr))}
 .sl-layout__main ul.sl-brow__list{grid-template-columns:repeat(4,minmax(0,1fr))}
-@media (max-width:1080px){.sl-hot--brands ul.sl-brow__list,.sl-layout__main ul.sl-brow__list{grid-template-columns:repeat(3,minmax(0,1fr))}.sl-hot--brands ul.sl-brow__list li:nth-child(n+4){display:none}}
+@media (max-width:1080px){.sl-hot--brands ul.sl-brow__list,.sl-layout__main ul.sl-brow__list{grid-template-columns:repeat(3,minmax(0,1fr))}.sl-hot--brands .sl-brow:not(.sl-brow--main) ul.sl-brow__list li:nth-child(n+4){display:none}}
 @media (max-width:600px){
   .sl-hot--brands ul.sl-brow__list,.sl-layout__main ul.sl-brow__list{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-  .sl-hot--brands ul.sl-brow__list li:nth-child(n+3){display:none}
+  .sl-hot--brands .sl-brow:not(.sl-brow--main) ul.sl-brow__list li:nth-child(n+3){display:none}
   .sl-brow+.sl-brow{margin-top:30px}
   .sl-brow .sl-sec-head h2{font-size:22px}
 }
+
+/* 13/11 khối sản phẩm gọn ngay dưới banner */
+.sl-hot--brands{padding:56px 0 64px}
