@@ -123,3 +123,18 @@
     nums.forEach(function (n) { io.observe(n); });
   }
 })();
+
+/* Album anh: bam xem anh lon, truot qua lai */
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.sl-album a')); if(!links.length) return;
+  var box,img,cur=0;
+  function show(i){cur=(i+links.length)%links.length; img.src=links[cur].href;}
+  function close(){if(box){box.remove();box=null;document.removeEventListener('keydown',key);}}
+  function key(e){if(e.key==='Escape')close();else if(e.key==='ArrowRight')show(cur+1);else if(e.key==='ArrowLeft')show(cur-1);}
+  links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();
+    box=document.createElement('div');box.className='sl-lb';box.setAttribute('role','dialog');
+    box.innerHTML='<img alt=""><button class="sl-lb__x" aria-label="Đóng">&times;</button><button class="sl-lb__p" aria-label="Ảnh trước">&#8249;</button><button class="sl-lb__n" aria-label="Ảnh sau">&#8250;</button>';
+    document.body.appendChild(box);img=box.querySelector('img');show(i);
+    box.addEventListener('click',function(ev){var t=ev.target; if(t.className==='sl-lb__p')show(cur-1); else if(t.className==='sl-lb__n')show(cur+1); else if(t!==img)close();});
+    document.addEventListener('keydown',key);});});
+})();
