@@ -574,9 +574,9 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 .woocommerce-product-gallery__trigger:after{content:"";position:absolute;left:24px;top:24px;width:2px;height:8px;background:#15264D;transform:rotate(-45deg);transform-origin:top}
 .woocommerce-product-gallery{position:relative}
 /* Album anh hoat dong noi bo */
-.sl-album{columns:3 220px;column-gap:12px;margin:18px 0 28px}
-.sl-album a{display:block;margin:0 0 12px;break-inside:avoid;border-radius:6px;overflow:hidden;background:var(--c-soft);cursor:zoom-in}
-.sl-album img{width:100%;height:auto;display:block;transition:transform .35s ease}
+.sl-album{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 28px}
+.sl-album a{display:block;aspect-ratio:4/3;border-radius:6px;overflow:hidden;background:var(--c-soft);cursor:zoom-in}
+.sl-album img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block;transition:transform .35s ease}
 .sl-album a:hover img{transform:scale(1.03)}
 .sl-lb{position:fixed;inset:0;z-index:99999;background:rgba(10,16,32,.94);display:flex;align-items:center;justify-content:center}
 .sl-lb img{max-width:92vw;max-height:88vh;object-fit:contain}
