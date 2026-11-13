@@ -556,3 +556,12 @@ ul.products li.product{margin:0;width:auto;float:none;padding:0}
 
 /* 13/11 khối sản phẩm gọn ngay dưới banner */
 .sl-hot--brands{padding:56px 0 64px}
+
+/* Nhà phân phối chiến lược PV OIL LUBE */
+.sl-pvoil{padding:56px 0;background:var(--c-soft)}
+.sl-pvoil__grid{display:grid;grid-template-columns:5fr 7fr;gap:40px;align-items:center}
+.sl-pvoil__txt h2{font-family:var(--f-head);margin:0 0 14px;font-size:clamp(22px,2.4vw,32px);color:var(--c-blue);text-wrap:balance}
+.sl-pvoil__txt p{margin:0 0 20px;line-height:1.7;text-wrap:pretty}
+.sl-pvoil__imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sl-pvoil__imgs img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;display:block}
+@media(max-width:800px){.sl-pvoil{padding:36px 0}.sl-pvoil__grid{grid-template-columns:1fr;gap:20px}.sl-pvoil__imgs{grid-template-columns:1fr 1fr}}
